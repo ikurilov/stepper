@@ -1,0 +1,5 @@
+<ul class="tabs">
+  <li class="tab-item" *ngFor="let tab of tabs">
+    <a class="tab-item__link" [routerLink]="tab.link" routerLinkActive="tab-item__link--active">{{tab.text}}</a>
+  </li>
+</ul>

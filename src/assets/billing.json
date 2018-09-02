@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "id": "cardNumber",
+      "row": 0,
+      "title": "Card number",
+      "type": "text",
+      "validators": [
+        {
+          "pattern": "/^([A-Z][A-Za-z ,.'`-]{3,30})$/g"
+        }
+      ]
+    },
+    {
+      "id": "month",
+      "row": 0,
+      "title": "Month (MM)",
+      "type": "number"
+    },
+    {
+      "id": "cvcCvv",
+      "row": 1,
+      "title": "CVC / CVV",
+      "type": "text"
+    },
+    {
+      "id": "year",
+      "row": 1,
+      "title": "Year (YYYY)",
+      "type": "number",
+      "validators": []
+    }
+  ]
+}

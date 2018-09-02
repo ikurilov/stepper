@@ -1,0 +1,5 @@
+<div class="form-group">
+  <div class="form-row" *ngFor="let row of rows">
+    <app-form-control *ngFor="let field of row" [options]="field" [fg]="fg"></app-form-control>
+  </div>
+</div>

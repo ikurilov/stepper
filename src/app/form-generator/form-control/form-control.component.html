@@ -1,0 +1,22 @@
+<ng-container [formGroup]="fg">
+  <div *ngIf="!options.customControl" [ngSwitch]="options.type">
+    <input class="form-control" *ngSwitchCase="'text'" type="text" [placeholder]="options.title" [formControlName]="options.id">
+    <input class="form-control" *ngSwitchCase="'email'" type="email" [placeholder]="options.title" [formControlName]="options.id">
+    <input class="form-control" *ngSwitchCase="'phone'" type="phone" [placeholder]="options.title" [formControlName]="options.id">
+    <input class="form-control" *ngSwitchCase="'number'" type="number" [placeholder]="options.title" [formControlName]="options.id">
+    <ng-container *ngIf="options.items">
+      <ng-select
+        class="custom-select"
+        *ngSwitchCase="'select'"
+        [formControlName]="options.id"
+        [placeholder]="options.title"
+        [items]="options.items"
+        [bindValue]=""
+        bindLabel="title"
+      ></ng-select>
+    </ng-container>
+  </div>
+  <ng-container #customControl>
+
+  </ng-container>
+</ng-container>

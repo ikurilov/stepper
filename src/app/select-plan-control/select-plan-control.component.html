@@ -1,0 +1,11 @@
+<div class="plans">
+  <div class="plan-item" [ngClass]="{'plan-item--active': plan.id === selectedPlan?.id}" *ngFor="let plan of plans" (click)="togglePlan(plan)">
+    <div class="plan-item__image" style.backgroundImage="url('assets/{{plan.preview}}')" alt=""></div>
+    <div class="plan-item__description">
+      <div class="plan-item__title">{{plan.title}}</div>
+      <div class="plan-item__price">
+        <div class="plan-item__price-price">{{plan.price}}<span class="plan-item__price-currency">{{plan.currency}}</span></div>
+      </div>
+    </div>
+  </div>
+</div>

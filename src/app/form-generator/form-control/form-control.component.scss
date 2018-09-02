@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  flex-grow: 1;
+  margin: 0 15px 30px;
+  min-width: 200px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 20px 15px;
+  border: 0;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 20px;
+  background: #f3f3f3;
+  color: #839499;
+  &::placeholder {
+    color: #839499;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.custom-select.ng-select {
+  color: red;
+  ::ng-deep .ng-select-container {
+    height: 60px;
+    min-height: auto;
+    border-radius: 3px;
+    border-color: transparent;
+    color: #839499;
+    background: #f3f3f3;
+    .ng-value-container {
+      .ng-input {
+        top: 21px;
+      }
+      .ng-placeholder {
+        color: #839499;
+      }
+    }
+  }
+}
+

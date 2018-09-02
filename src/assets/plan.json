@@ -1,0 +1,25 @@
+{
+  "plans": [
+    {
+      "id": 0,
+      "title": "Beginner",
+      "price": 10,
+      "currency": "$",
+      "preview": "beginner.png"
+    },
+    {
+      "id": 1,
+      "title": "Intermediate",
+      "price": 20,
+      "currency": "$",
+      "preview": "intermediate.png"
+    },
+    {
+      "id": 2,
+      "title": "Upper Intermediate",
+      "price": 30,
+      "currency": "$",
+      "preview": "upper_intermediate.png"
+    }
+  ]
+}

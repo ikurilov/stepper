@@ -1,0 +1,11 @@
+.summary-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.summary-item {
+  flex-grow: 1;
+  max-width: 50%;
+  min-width: 200px;
+  margin: 0 15px 30px;
+}
