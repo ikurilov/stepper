@@ -21,6 +21,9 @@
   &:focus {
     outline: none;
   }
+  &.ng-invalid {
+    color: #a70c00
+  }
 }
 
 .custom-select.ng-select {
