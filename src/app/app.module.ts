@@ -12,6 +12,7 @@ import { CartSharedModule } from './cart/cart-shared.module';
 import { PlanSummaryComponent } from './billing/plan-summary/plan-summary.component';
 import { InformationSummaryComponent } from './billing/information-summary/information-summary.component';
 import { SummaryComponent } from './billing/summary/summary.component';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
   imports: [
@@ -34,7 +35,9 @@ import { SummaryComponent } from './billing/summary/summary.component';
     SelectPlanControlWrapperComponent,
     BillingComponent
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy, useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
