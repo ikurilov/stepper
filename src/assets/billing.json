@@ -7,7 +7,7 @@
       "type": "text",
       "validators": [
         {
-          "pattern": "/^([A-Z][A-Za-z ,.'`-]{3,30})$/g"
+          "pattern": "/[0-9 ]*/i"
         }
       ]
     },
@@ -15,20 +15,34 @@
       "id": "month",
       "row": 0,
       "title": "Month (MM)",
-      "type": "number"
+      "type": "text",
+      "validators": [
+        {
+          "pattern": "/[0-9]{2}/i"
+        }
+      ]
     },
     {
       "id": "cvcCvv",
       "row": 1,
       "title": "CVC / CVV",
-      "type": "text"
+      "type": "text",
+      "validators": [
+        {
+          "pattern": "/[0-9]{3}/i"
+        }
+      ]
     },
     {
       "id": "year",
       "row": 1,
       "title": "Year (YYYY)",
-      "type": "number",
-      "validators": []
+      "type": "text",
+      "validators": [
+        {
+          "pattern": "/[0-9]{4}/i"
+        }
+      ]
     }
   ]
 }
