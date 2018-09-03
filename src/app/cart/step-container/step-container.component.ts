@@ -33,7 +33,6 @@ export class StepContainerComponent implements OnInit {
     componentInstance.header = this.stepConfig.header;
     componentInstance.fields = this.stepConfig.formConfig.fields;
     componentInstance.fg = this.stepsService.form.get(this.stepConfig.id);
-    /* TODO mb not necessary */
-    this.cdr.markForCheck();
+    this.cdr.detectChanges(); // to prevent 'ExpressionChangedAfterItHasBeenCheckedError' on form controls
   }
 }
