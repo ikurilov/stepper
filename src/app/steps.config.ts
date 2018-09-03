@@ -24,6 +24,27 @@ export const StepsConfig: IStepConfig[] = [
       }
     ),
   },
+  /* uncomment to check generation of stepper */
+  /*{
+    id: 'plan2',
+    title: 'Choice plan 2',
+    header: 'A plan to suit you 2',
+    formConfigUrl: 'plan.json',
+    formConfigMapper: (data) => (
+      {
+        fields: [
+          {
+            id: 'plans',
+            data: data.plans,
+            customControl: SelectPlanControlWrapperComponent,
+            validators: [{
+              'required': true
+            }]
+          }
+        ]
+      }
+    ),
+  },*/
   {
     id: 'information',
     title: 'Information',

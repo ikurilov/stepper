@@ -14,6 +14,10 @@ const cartRoutes: Routes = [
     },
     children: [
       {
+        path: '',
+        redirectTo: 'default'
+      },
+      {
         path: ':stepId',
         component: StepContainerComponent,
         resolve: {

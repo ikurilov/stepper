@@ -19,12 +19,6 @@ export class CartComponent implements OnInit {
         };
       });
     });
-    this.route.params.subscribe(params => {
-      if (!params['stepId']) {
-        const steps = this.stepsService.getSteps();
-        this.router.navigate(['./' + steps[0].id], {relativeTo: this.route});
-      }
-    });
   }
 
   ngOnInit() {

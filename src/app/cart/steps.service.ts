@@ -42,7 +42,7 @@ export class StepsService {
     }
   }
 
-  getStep(id) {
+  getStep(id: string) {
     return this.steps.find(step => step.id === id);
   }
 
@@ -58,11 +58,15 @@ export class StepsService {
     this.steps = steps;
   }
 
-  addStepFormGroup(step, formConfig) {
+  addStepFormGroup(step: IStepConfig, formConfig: IFormOptions) {
     const formGroup = this.formGenerator.convertToFormGroup(formConfig);
     this.form.addControl(step.id, formGroup);
   }
 
+  /**
+   * Returns observable of form config from assets
+   * @param step
+   */
   getStepFormConfig(step: IStepConfig) {
     if (!this.form.get(step.id)) {
       return this.http.get('assets/' + step.formConfigUrl).pipe(
@@ -79,6 +83,27 @@ export class StepsService {
       );
     } else {
       return of(step);
+    }
+  }
+
+  /**
+   * checks validity of previous steps
+   * @param step
+   */
+  canNavigateToStep(step: IStepConfig) {
+    const stepIdx = this.steps.findIndex(s => s.id === step.id);
+    if (stepIdx === 0) {
+      return true;
+    } else {
+      let prevStepsValid = true;
+      for (let i = 0; i < stepIdx; i++) {
+        const stepForm = this.form.get(this.steps[i].id);
+        if (!stepForm || !stepForm.valid) {
+          prevStepsValid = false;
+          break;
+        }
+      }
+      return prevStepsValid;
     }
   }
 }
