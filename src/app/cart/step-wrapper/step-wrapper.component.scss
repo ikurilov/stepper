@@ -7,4 +7,22 @@
   &__content {
 
   }
+  &__footer {
+    text-align: right;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  background: #1bb01b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 15px;
+  width: 150px;
+  &[disabled] {
+    background-color: grey;
+    color: #9da6a9;
+  }
 }

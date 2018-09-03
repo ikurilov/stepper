@@ -15,7 +15,10 @@ export const StepsConfig: IStepConfig[] = [
           {
             id: 'plans',
             data: data.plans,
-            customControl: SelectPlanControlWrapperComponent
+            customControl: SelectPlanControlWrapperComponent,
+            validators: [{
+              'required': true
+            }]
           }
         ]
       }

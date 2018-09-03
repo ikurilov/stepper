@@ -5,4 +5,7 @@
   <div class="step__content">
     <ng-content></ng-content>
   </div>
+  <div class="step__footer">
+    <button class="btn" [disabled]="!form.valid" (click)="next()">Continue</button>
+  </div>
 </div>

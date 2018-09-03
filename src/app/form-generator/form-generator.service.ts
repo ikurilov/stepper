@@ -37,6 +37,9 @@ export class FormGeneratorService {
         case 'pattern': {
           return Validators.pattern(validator[validatorName]);
         }
+        case 'required': {
+          return Validators.required;
+        }
         default: {
           return null;
         }
