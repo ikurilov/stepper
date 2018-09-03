@@ -21,7 +21,7 @@ import { StepsConfig } from './steps.config';
         path: '**',
         redirectTo: 'products'
       },
-    ], {enableTracing: true})
+    ], {enableTracing: false})
   ],
   exports: [RouterModule],
   declarations: []
