@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -11,7 +11,7 @@ export class FormControlComponent implements OnInit {
   @Input() fg: FormGroup;
   @ViewChild('customControl', {read: ViewContainerRef}) customControlViewContainer: ViewContainerRef;
 
-  constructor(private cfr: ComponentFactoryResolver, private cdr: ChangeDetectorRef) {
+  constructor(private cfr: ComponentFactoryResolver) {
   }
 
   ngOnInit() {
@@ -28,8 +28,5 @@ export class FormControlComponent implements OnInit {
     componentInstance.data = this.options.data;
     componentInstance.fg = this.fg;
     componentInstance.name = this.options.id;
-    /* TODO mb not necessary */
-    this.cdr.markForCheck();
-    console.log(this.options.data);
   }
 }
