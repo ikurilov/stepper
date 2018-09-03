@@ -35,7 +35,10 @@ export class FormGeneratorService {
       const validatorName = keys ? keys[0] : null;
       switch (validatorName) {
         case 'pattern': {
-          return Validators.pattern(validator[validatorName]);
+          // get regexp body and flag
+          const regExpParts = validator[validatorName].match(/^\/([^\/]*)\/([a-z])$/);
+          const regexp = new RegExp(regExpParts[1], regExpParts[2]);
+          return Validators.pattern(regexp);
         }
         case 'required': {
           return Validators.required;
