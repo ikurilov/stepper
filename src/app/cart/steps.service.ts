@@ -58,6 +58,10 @@ export class StepsService {
     this.steps = steps;
   }
 
+  isLastStep(step: IStepConfig) {
+    return this.steps.findIndex(s => s.id === step.id) === this.steps.length - 1;
+  }
+
   addStepFormGroup(step: IStepConfig, formConfig: IFormOptions) {
     const formGroup = this.formGenerator.convertToFormGroup(formConfig);
     this.form.addControl(step.id, formGroup);

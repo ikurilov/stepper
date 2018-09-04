@@ -4,8 +4,16 @@
   </div>
   <div class="step__content">
     <ng-content></ng-content>
+    <div class="notification" *ngIf="notification">
+      <div class="notification__icon"
+           [ngClass]="{'notification__icon--error': notification?.type === 'error', 'notification__icon--success': notification?.type === 'success'}">
+      </div>
+      <div class="notification__text">{{notification?.text}}</div>
+    </div>
   </div>
   <div class="step__footer">
-    <button class="btn" [disabled]="!form.valid" (click)="next()">Continue</button>
+    <button class="btn btn--success" *ngIf="!isLastStep" [disabled]="!form.valid" (click)="next()">Continue</button>
+    <button class="btn btn--success" *ngIf="isLastStep && !notification" (click)="buy()">Buy</button>
+    <button class="btn btn--default" *ngIf="notification" (click)="hideNotification()">Back</button>
   </div>
 </div>

@@ -1,8 +1,7 @@
-<!--<app-form-group [fields]="options.fields"></app-form-group>-->
-<!--<form [formGroup]="plansForm">
-  <app-select-plan-control [data]="data.data" formControlName="data"></app-select-plan-control>
-</form>-->
-<app-tabs [tabs]="tabs"></app-tabs>
-<div class="cart-body">
-  <router-outlet></router-outlet>
+<div class="cart">
+  <app-tabs [tabs]="tabs"></app-tabs>
+  <div class="cart__body">
+    <router-outlet></router-outlet>
+  </div>
+
 </div>

@@ -1,4 +1,23 @@
-.cart-body {
-  background-color: #e5e5e8;
-  padding: 20px 30px;
+.cart {
+  position: relative;
+  background: rgb(243, 243, 243);
+  padding: 30px;
+  min-height: 640px;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #9da6a9, #788b91);
+  }
+  &__body {
+    flex-grow: 1;
+    background-color: #e5e5e8;
+    padding: 20px 30px;
+  }
 }
